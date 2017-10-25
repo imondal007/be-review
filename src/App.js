@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
+import logo from './img/logo.png'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
+      <div>
+        <header className="section section-full-h gray-bg home-hero">
+          <div className="container">
+            <img src={logo} alt="Behance Bangladesh"/>
+            <h1>BeReviews Dhaka#6</h1>
+            <p className="sub-title">Please register yourself to get an invitation</p>
+          </div>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="section"></div>
+        <footer className="section"></footer>
       </div>
     );
   }
