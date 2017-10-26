@@ -28,9 +28,24 @@ h2, .sub-title {
 }
 
 .section-full-h {
-  height: 100vh;
+  height: 106vh;
 }
 
 .container {
   flex: 0 1 1000px;
+  position: relative;
+}
+
+.list-style-n {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media screen and (min-width: 768px) {
+  .col-50x {
+    width: 50%;
+    display: inline-flex;
+    flex-direction: column;
+  }
 }

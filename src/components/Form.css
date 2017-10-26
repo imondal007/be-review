@@ -1,0 +1,119 @@
+.form-control {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  position: relative;
+}
+
+.input-area {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+}
+
+.form-control label {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.steps {
+  align-self: flex-end;
+  text-transform: capitalize;
+  font-size: 12px;
+  font-style: italic;
+  color: #005cff;
+}
+
+.form-control .input-like.checkbox label {
+    display: inline;
+    padding: 0;
+    font-weight: normal;
+    text-transform: none;
+    margin: 0;
+    justify-content: unset;
+    width: auto;
+}
+
+.hints {
+  font-size: 12px;
+  font-style: italic;
+  padding: 20px;
+}
+
+.form-control input[type="text"], .form-control input[type="email"], .input-like {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 25px 50px 0px rgba(160, 195, 215, 0.5);
+  width: 100%;
+  border: none;
+  padding: 20px;
+  font-size: 28px;
+  border-bottom: 4px solid #d6d8df;
+  display: block;
+}
+
+.form-control input:focus {
+  outline: none;
+  border-bottom-color: #053eff;
+}
+
+.input-box:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  min-width: 50px;
+  max-width: 70px;
+  width: 100%;
+  border-radius: 0 0 0 5px;
+  background: #053eff;
+  z-index: 1;
+}
+
+.inline-button {
+    position: absolute;
+    right: 24px;
+    top: 51px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.inline-button:focus {
+  outline: none;
+}
+
+.inline-button img {
+    max-width: 36px;
+    height: auto;
+}
+
+.checkbox span {
+  display: block;
+}
+
+.checkbox span input{
+  margin-right: 10px;
+}
+
+.hide {
+  display: none;
+}

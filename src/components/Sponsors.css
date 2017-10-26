@@ -1,0 +1,59 @@
+.styled-title {
+  border-radius: 40px;
+  position: absolute;
+  left: 0px;
+  top: -122px;
+  padding: 10px 30px;
+  background-image: url('../img/btn-noise.png'), -moz-linear-gradient( 0deg, rgb(5,62,255) 0%, rgb(227,0,235) 100%);
+  background-image: url('../img/btn-noise.png'), -webkit-linear-gradient( 0deg, rgb(5,62,255) 0%, rgb(227,0,235) 100%);
+  background-image: url('../img/btn-noise.png'), -ms-linear-gradient( 0deg, rgb(5,62,255) 0%, rgb(227,0,235) 100%);
+  background-color: blue;
+  color: #fff;
+  z-index: 1;
+}
+
+.styled-title:before {
+  content: "";
+  border-radius: 40px;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  padding: 0;
+  width: 80%;
+  height: 60%;
+  background-image: -moz-linear-gradient( 0deg, rgb(5,62,255) 0%, rgb(227,0,235) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(5,62,255) 0%, rgb(227,0,235) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(5,62,255) 0%, rgb(227,0,235) 100%);
+  -webkit-filter: blur(20px);
+  -moz-filter: blur(20px);
+  -o-filter: blur(20px);
+  -ms-filter: blur(20px);
+  filter: blur(20px);
+  z-index: -1;
+}
+
+.sponsor-grid {
+  list-style: none;
+  padding: 0;
+}
+
+.sponsor-grid > li {
+  border-bottom: 1px solid #e7e8ef;
+  padding: 5% 0;
+}
+
+.sponsor-grid > li:last-child {
+}
+
+.sponsor-grid > li ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sponsor-grid h4 {
+  color: #868a97;
+}
+
+.sponsor-grid img {
+  margin: 3% 0;
+}
