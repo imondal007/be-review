@@ -14,8 +14,8 @@ class Sponsors extends Component {
   render() {
     return(
         <div>
-          <h2 className="styled-title">Sponsors & Partners ↓</h2>
-          <ul className="sponsor-grid">
+          <h2 className="styled-title"><a href="#partners">Sponsors & Partners ↓</a></h2>
+          <ul className="sponsor-grid" id="partners">
             <li>
               <ul>
                 <li className="col-50x">
