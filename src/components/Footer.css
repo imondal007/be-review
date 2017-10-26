@@ -1,1 +1,12 @@
+footer {
+  color: #868a97;
+}
 
+footer a {
+  text-decoration: none;
+  color: #005cff;
+}
+
+footer a:visited {
+  color: #005cff;
+}
