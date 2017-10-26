@@ -10,18 +10,27 @@ class Form extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  componentDidMount() {
-    this.props.showInput(0)
-  }
-
   handleSubmit(e) {
     e.preventDefault()
     this.props.handleChange()
   }
 
+  componentDidMount() {
+    this.props.showInput(0)
+  }
+
   render() {
+    const hint = () => {
+      if(this.props.index < 9) {
+        return 'Hit Enter to go next'
+      } else {
+        document.getElementById('inputArea').classList.add('hide')
+        document.getElementById('submit').classList.add('hide')
+      }
+      return 'Thanks for your interest, we will get back to you soon'
+    }
     return(
-      <form ref="regForm" className="form-control" onSubmit={this.handleSubmit}>
+      <form ref="regForm" id="form" className="form-control" onSubmit={this.handleSubmit}>
         <div id="inputArea" className="input-area">
           <div className="input hide">
             <label htmlFor="name">
@@ -118,7 +127,7 @@ class Form extends Component {
               <span>Item you want to review</span>
               <span className="steps">Question 9/10 </span>
             </label>
-            <span className="input-box">
+            <span className="input-box multiple">
               <label htmlFor="item1">Item 1</label>
               <input type="text" id="item1" placeholder="Please put item link & category" name="items" />
             </span>
@@ -132,8 +141,8 @@ class Form extends Component {
             </span>
           </div>
         </div>
-        <button className="inline-button"><img src={next} alt="Next"/></button>
-        <span className="hints">Hit Enter to go next</span>
+        <button className="inline-button" id="submit"><img src={next} alt="Next"/></button>
+        <span className="hints"> {hint()} </span>
       </form>
     )
   }

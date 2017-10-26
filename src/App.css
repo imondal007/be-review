@@ -17,11 +17,11 @@
 }
 
 .home-hero h1 {
-  margin: 10% 0 0;
+  margin: 10% 0 10%;
 }
 
 .home-hero .sub-title {
-  margin: 0 0 5%;
+  margin: 0 0 10%;
 }
 
 .sp-area.section {
@@ -41,4 +41,14 @@
 .footer ul li {
   padding: 0;
   margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .home-hero h1 {
+    margin: 10% 0 0;
+  }
+
+  .home-hero .sub-title {
+    margin: 0 0 5%;
+  }
 }

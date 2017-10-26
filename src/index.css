@@ -13,11 +13,15 @@ body {
 }
 
 h1 {
-  font-size: 5em;
+  font-size: 3em;
 }
 
 h2, .sub-title {
   font-size: 1.4em;
+}
+
+.form-control input[type="text"] {
+  font-size: 14px;
 }
 
 .section  {
@@ -25,10 +29,6 @@ h2, .sub-title {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.section-full-h {
-  height: 106vh;
 }
 
 .container {
@@ -42,10 +42,32 @@ h2, .sub-title {
   list-style: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 @media screen and (min-width: 768px) {
   .col-50x {
     width: 50%;
     display: inline-flex;
     flex-direction: column;
   }
+
+  .section-full-h {
+    min-height: 95vh;
+  }
+
+  h1 {
+    font-size: 5em;
+  }
+
+  .form-control input[type="text"] {
+    font-size: 28px;
+  }
+
+  .inline-button {
+      bottom: 51px;
+  }
+
 }

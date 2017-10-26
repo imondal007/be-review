@@ -33,8 +33,6 @@ class App extends Component {
     if(index < elementLength) {
       this.setState( { index : this.state.index + 1 } )
       this.showInput(index)
-    } else {
-      console.log(this.refs)
     }
 
   }

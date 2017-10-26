@@ -61,7 +61,6 @@
   width: 100%;
   border: none;
   padding: 20px;
-  font-size: 28px;
   border-bottom: 4px solid #d6d8df;
   display: block;
 }
@@ -89,7 +88,7 @@
 .inline-button {
     position: absolute;
     right: 24px;
-    top: 51px;
+    bottom: 75px;
     background: transparent;
     border: none;
     padding: 0;

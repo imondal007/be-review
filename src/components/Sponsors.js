@@ -8,12 +8,13 @@ import detroitlab from '../img/dl.png'
 import magnito from '../img/magnito.png'
 import audacity from '../img/audacity.png'
 import bronze from '../img/bronze-sp.png'
+import partners from '../img/partners.png'
 
 class Sponsors extends Component {
   render() {
     return(
         <div>
-          <h2 className="styled-title">Sponsors & Partners</h2>
+          <h2 className="styled-title">Sponsors & Partners ↓</h2>
           <ul className="sponsor-grid">
             <li>
               <ul>
@@ -64,7 +65,7 @@ class Sponsors extends Component {
                 <li className="col-50x">
                   <h4>Partners</h4>
                   <span>
-                    <img src={bronze} alt="Bronze Sponsors"/>
+                    <img src={partners} alt="Bronze Sponsors"/>
                   </span>
                 </li>
               </ul>
