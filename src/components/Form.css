@@ -85,6 +85,10 @@
   z-index: 1;
 }
 
+.input-box.input-like.checkbox:before {
+  bottom: -2px;
+}
+
 .inline-button {
     position: absolute;
     right: 24px;
