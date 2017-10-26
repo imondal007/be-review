@@ -20,10 +20,6 @@ h2, .sub-title {
   font-size: 1.4em;
 }
 
-.form-control input[type="text"] {
-  font-size: 14px;
-}
-
 .section  {
   padding: 80px 15px;
   display: flex;
@@ -60,10 +56,6 @@ img {
 
   h1 {
     font-size: 5em;
-  }
-
-  .form-control input[type="text"] {
-    font-size: 28px;
   }
 
   .inline-button {
