@@ -32,6 +32,7 @@ class Form extends Component {
       br1        : this.refs.br1.checked ? "yes" : "no",
       br2        : this.refs.br2.checked ? "yes" : "no",
       br3        : this.refs.br3.checked ? "yes" : "no",
+      br4        : this.refs.br4.checked ? "yes" : "no",
       review     : this.refs.yes.checked ? "yes" : "no",
       item1      : this.refs.item1.value,
       item2      : this.refs.item2.value,
@@ -66,7 +67,7 @@ class Form extends Component {
     // hints
     const hint = () => {
       if(this.props.index <= 9) {
-        return 'Hit Enter to go next'
+        return 'NB: You can view and edit your form before you submit, Hit Enter to go next'
       } else if(this.props.index === 10) {
         document.getElementById('submit').classList.add('hide')
         return null
@@ -82,7 +83,7 @@ class Form extends Component {
         const info = Object.keys(data).map(x => <li key={x}><span> { x + " : "} </span> { data[x] }</li> )
         return (
           <div className="preview" id="preview">
-            <h4>Does it looks good?</h4>
+            <h4>Does it look good?</h4>
             <ul className="list-style-n data-list">
               {info}
             </ul>
@@ -172,6 +173,10 @@ class Form extends Component {
               <span>
                 <input ref="br3" type="checkbox" id="br3" name="pastevent" value="BeReviewsDhaka#3" />
                 <label htmlFor="br3">BeReviewsDhaka#3</label>
+              </span>
+              <span>
+                <input ref="br4" type="checkbox" id="br4" name="pastevent" value="BeReviewsDhaka#4" />
+                <label htmlFor="br4">BeReviewsDhaka#4</label>
               </span>
             </span>
           </div>

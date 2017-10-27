@@ -6,6 +6,7 @@ import aiub from '../img/aiub.png'
 import joomshaper from '../img/joomshaper.png'
 import detroitlab from '../img/dl.png'
 import magnito from '../img/magnito.png'
+import augmedix from '../img/am.png'
 import audacity from '../img/audacity.png'
 import bronze from '../img/bronze-sp.png'
 import partners from '../img/partners.png'
@@ -46,7 +47,8 @@ class Sponsors extends Component {
                 <li className="col-50x">
                   <h4>Silver Sponsor</h4>
                   <span>
-                    <img src={magnito} alt="Magnito Digital"/>
+                  <img src={magnito} alt="Magnito Digital"/>
+                  <img src={augmedix} alt="Augmedix"/>
                   </span>
                   <span>
                     <img src={audacity} alt="Audacity IT Solutions"/>

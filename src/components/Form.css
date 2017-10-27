@@ -25,7 +25,7 @@
   justify-content: space-between;
   padding: 0 20px;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-bottom: 10px;
   width: 100%;
 }
@@ -89,7 +89,7 @@
 .inline-button {
     position: absolute;
     right: 24px;
-    bottom: 68px;
+    bottom: 80px;
     background: transparent;
     border: none;
     padding: 0;
@@ -178,4 +178,8 @@ input:focus, .inline-button:focus {
     display: inline;
     margin-bottom: 0;
   } 
+
+  .inline-button {
+    bottom: 68px;
+  }
 }

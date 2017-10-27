@@ -17,6 +17,7 @@ h1 {
   background-color: #1f37fd;
   background: -webkit-linear-gradient(0deg, rgb(5,62,255) 0%, rgb(227,0,235) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -66,4 +67,11 @@ img {
       bottom: 51px;
   }
 
+}
+
+@media screen and (min-height: 800px) {
+  .section-full-h {
+    max-height: 1000px;
+    height: 100%;
+  }
 }

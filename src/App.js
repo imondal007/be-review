@@ -38,11 +38,25 @@ class App extends Component {
   handleChange(userData) {
     const elementLength   = document.getElementById('inputArea').children.length
     const index           = this.state.index
+    const range     = index > 0 && index < 3
+    const element   = document.getElementById('inputArea').children[index -1].children[1].children[0]
     const data            = userData
 
-    if(index <= elementLength) {
-      this.setState( { index : this.state.index + 1, data : data } )
-      this.showInput(index)
+    if(range && element.value.length > 0) {
+      if(index <= elementLength) {
+        this.setState( { index : this.state.index + 1, data : data } )
+        this.showInput(index)
+      }
+    } else if(index === 3 && !isNaN(element.value)) {
+      if(index <= elementLength) {
+        this.setState( { index : this.state.index + 1, data : data } )
+        this.showInput(index)
+      }
+    } else if(index >= 4) {
+      if(index <= elementLength) {
+        this.setState( { index : this.state.index + 1, data : data } )
+        this.showInput(index)
+      }
     }
   }
 
@@ -66,7 +80,7 @@ class App extends Component {
     return (
       <div>
         {/* Header Area */}
-        <header className="section section-full-h gray-bg home-hero">
+        <header className="section gray-bg home-hero">
           <div className="container">
             <img src={logo} alt="Behance Bangladesh"/>
             <h1>BeReviews Dhaka#6</h1>
