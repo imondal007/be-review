@@ -17,7 +17,7 @@ class Form extends Component {
   }
 
   handleSubmit(e) {
-    
+
     //Preventing default behavior
     e.preventDefault()
 
@@ -33,7 +33,7 @@ class Form extends Component {
       br2        : this.refs.br2.checked ? "yes" : "no",
       br3        : this.refs.br3.checked ? "yes" : "no",
       br4        : this.refs.br4.checked ? "yes" : "no",
-      review     : this.refs.yes.checked ? "yes" : "no",
+      review     : this.refs.no.checked ? "no" : "yes",
       item1      : this.refs.item1.value,
       item2      : this.refs.item2.value,
       item3      : this.refs.item3.value,
@@ -41,15 +41,19 @@ class Form extends Component {
 
     //Calling handleChange function
     this.props.handleChange(userData)
+    if(userData.review === 'no' && this.props.index === 8) {
+      this.props.final(userData)
+    }
+
   }
 
   confirm(e) {
-    
+
     //Preventing default behavior
     e.preventDefault()
     const data  = this.props.data
     const url   = `${endpoint}name=${data.name}&email=${data.email}&phone=${data.phone}&behance=${data.behance}&why=${data.why}&portfolio=${data.portfolio}&br1=${data.br1}&br2=${data.br2}&br3=${data.br3}&review=${data.review}&item1=${data.item1}&item2=${data.item2}&item3=${data.item3}`
-    
+
     axios.post(url, data)
     .then((response) => this.props.setConfirmation(response.data.success))
     .catch((error) => this.props.setError("Something went wrong! Please try again"))
@@ -72,7 +76,7 @@ class Form extends Component {
         document.getElementById('submit').classList.add('hide')
         return null
       }
-      
+
       return 'Thanks for your interest, we will get back to you soon'
     }
 
@@ -191,7 +195,7 @@ class Form extends Component {
                 <label htmlFor="yes">Yes</label>
               </span>
               <span>
-                <input ref="no" type="radio" id="no" name="review" value="no" />
+                <input ref="no" type="radio" id="no" name="review" value="no"/>
                 <label htmlFor="no">No</label>
               </span>
             </span>
@@ -216,7 +220,7 @@ class Form extends Component {
           </div>
         </div>
         { preview() }
-        <button className="inline-button" id="submit"><img src={next} alt="Next"/></button>        
+        <button className="inline-button" id="submit"><img src={next} alt="Next"/></button>
         <span className="hints"> {hint()} </span>
       </form>
     )

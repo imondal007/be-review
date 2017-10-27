@@ -15,6 +15,7 @@ class App extends Component {
     this.showInput        = this.showInput.bind(this)
     this.handleChange     = this.handleChange.bind(this)
     this.edit             = this.edit.bind(this)
+    this.final            = this.final.bind(this)
     this.setConfirmation  = this.setConfirmation.bind(this)
     this.setError         = this.setError.bind(this)
   }
@@ -48,6 +49,7 @@ class App extends Component {
         this.showInput(index)
       }
     } else if(index === 3 && !isNaN(element.value)) {
+      console.log(!isNaN(element.value))
       if(index <= elementLength) {
         this.setState( { index : this.state.index + 1, data : data } )
         this.showInput(index)
@@ -64,6 +66,15 @@ class App extends Component {
       this.setState( { index : 1} )
       this.showInput(0)
       document.getElementById('submit').classList.remove('hide')
+      document.getElementById('inputArea').classList.remove('hide')
+  }
+
+  final() {
+      const { index } = this.state
+      this.setState( { index : 10} )
+      // document.getElementById('inputArea').classList.add('hide')
+      this.showInput(index)
+      this.showInput(index + 1)
   }
 
   setConfirmation(msg) {
@@ -85,11 +96,12 @@ class App extends Component {
             <img src={logo} alt="Behance Bangladesh"/>
             <h1>BeReviews Dhaka#6</h1>
             <p className="sub-title"> { subTitle } </p>
-            <Form index={this.state.index} 
-                  data={this.state.data} 
-                  error={this.state.error} 
-                  handleChange={this.handleChange} 
-                  edit={this.edit} 
+            <Form index={this.state.index}
+                  data={this.state.data}
+                  error={this.state.error}
+                  handleChange={this.handleChange}
+                  edit={this.edit}
+                  final={this.final}
                   showInput={this.showInput}
                   setConfirmation={this.setConfirmation}
                   setError={this.setError} />
