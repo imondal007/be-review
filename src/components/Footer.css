@@ -10,3 +10,30 @@ footer a {
 footer a:visited {
   color: #005cff;
 }
+
+.footer.section {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.footer ul {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.footer ul li {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer ul li {
+    margin-bottom: 0px;
+  }
+}

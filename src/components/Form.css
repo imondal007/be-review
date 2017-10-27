@@ -1,8 +1,8 @@
 .form-control {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
   position: relative;
+  width: 100%;
 }
 
 .input-area {
@@ -46,7 +46,6 @@
     text-transform: none;
     margin: 0;
     justify-content: unset;
-    width: auto;
 }
 
 .hints {
@@ -68,11 +67,6 @@
   display: block;
 }
 
-.form-control input:focus {
-  outline: none;
-  border-bottom-color: #053eff;
-}
-
 .input-box:before {
   content: " ";
   display: block;
@@ -89,7 +83,7 @@
 }
 
 .input-box.input-like.checkbox:before {
-  bottom: -2px;
+  bottom: -4px;
 }
 
 .inline-button {
@@ -101,9 +95,10 @@
     padding: 0;
     margin: 0;
     display: block;
+    cursor: pointer;
 }
 
-.inline-button:focus {
+input:focus, .inline-button:focus {
   outline: none;
 }
 
@@ -112,7 +107,42 @@
     height: auto;
 }
 
+.preview {
+  background: #fff;
+  padding: 10px;
+  position: relative;
+  padding-bottom: 60px;
+}
+.preview .inline-button {
+  color: #fff;
+  padding: 10px 30px 10px 25px;
+  background-image: url('../img/btn-noise.png'), -moz-linear-gradient( 0deg, rgb(5,62,255) 0%, rgb(227,0,235) 100%);
+  background-image: url('../img/btn-noise.png'), -webkit-linear-gradient( 0deg, rgb(5,62,255) 0%, rgb(227,0,235) 100%);
+  background-image: url('../img/btn-noise.png'), -ms-linear-gradient( 0deg, rgb(5,62,255) 0%, rgb(227,0,235) 100%);
+  background-color: blue;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview .inline-button img {
+  margin-right: 10px;
+  max-width: 20px;
+}
+
+.preview .inline-button.back {
+  right: auto;
+  left: 170px;
+}
+
+.preview .inline-button.next {
+  right: auto;
+  left: 10px;
+}
+
 .checkbox span {
+  margin-bottom: 10px;
   display: block;
 }
 
@@ -122,4 +152,30 @@
 
 .hide {
   display: none;
+}
+
+.data-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.data-list li {
+  border-bottom: 1px solid #005cff;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.data-list li span {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 768px) {
+  .form-control {
+    width: 90%;
+  }
+  .checkbox span {
+    margin-right: 20px;
+    display: inline;
+    margin-bottom: 0;
+  } 
 }

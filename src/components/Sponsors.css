@@ -10,6 +10,10 @@
   background-color: blue;
   color: #fff;
   z-index: 1;
+  animation-duration: 1s;
+  animation-name: changewidth;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .styled-title a {
@@ -47,9 +51,6 @@
   padding: 5% 0;
 }
 
-.sponsor-grid > li:last-child {
-}
-
 .sponsor-grid > li ul {
   list-style: none;
   padding: 0;
@@ -61,4 +62,15 @@
 
 .sponsor-grid img {
   margin: 3% 0;
+  margin-right: 20px;
+}
+
+@keyframes changewidth {
+  from {
+    top: -122px;
+  }
+
+  to {
+    top: -117px;
+  }
 }

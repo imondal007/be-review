@@ -10,34 +10,59 @@ import Footer from './components/Footer'
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = { index : 1 }
-    this.showInput = this.showInput.bind(this)
-    this.handleChange = this.handleChange.bind(this)
+    this.state = { index : 1, data : null, confirm: null }
+
+    this.showInput        = this.showInput.bind(this)
+    this.handleChange     = this.handleChange.bind(this)
+    this.edit             = this.edit.bind(this)
+    this.setConfirmation  = this.setConfirmation.bind(this)
+    this.setError         = this.setError.bind(this)
   }
 
   showInput(index) {
     const i         = index
-    const range     = i > 0 && i <9
+    const range     = i > 0 && i < 9
     const element   = document.getElementById('inputArea').children
-    if(i === 0)
+    if(i === 0) {
       element[i].classList.remove('hide')
-    if(range)
+    } else if(i >= 9 ) {
+      element[i - 1].classList.add('hide')
+    } else if(range) {
       element[i - 1].classList.add('hide')
       element[i].classList.remove('hide')
-  }
-
-  handleChange() {
-    const elementLength   = document.getElementById('inputArea').children.length
-    const index = this.state.index
-
-    if(index < elementLength) {
-      this.setState( { index : this.state.index + 1 } )
-      this.showInput(index)
+      element[i].children[1].children[0].focus()
     }
 
   }
 
+  handleChange(userData) {
+    const elementLength   = document.getElementById('inputArea').children.length
+    const index           = this.state.index
+    const data            = userData
+
+    if(index <= elementLength) {
+      this.setState( { index : this.state.index + 1, data : data } )
+      this.showInput(index)
+    }
+  }
+
+  edit() {
+      this.setState( { index : 1} )
+      this.showInput(0)
+      document.getElementById('submit').classList.remove('hide')
+  }
+
+  setConfirmation(msg) {
+    this.setState( { confirm : msg } )
+    document.getElementById('preview').classList.add('hide')
+  }
+
+  setError(err) {
+    this.setState( { error : err } )
+  }
+
   render() {
+    const subTitle = this.state.confirm ? this.state.confirm : "Please register yourself to get an invitation"
     return (
       <div>
         {/* Header Area */}
@@ -45,8 +70,15 @@ class App extends Component {
           <div className="container">
             <img src={logo} alt="Behance Bangladesh"/>
             <h1>BeReviews Dhaka#6</h1>
-            <p className="sub-title">Please register yourself to get an invitation</p>
-            <Form index={this.state.index} handleChange={this.handleChange} showInput={this.showInput}/>
+            <p className="sub-title"> { subTitle } </p>
+            <Form index={this.state.index} 
+                  data={this.state.data} 
+                  error={this.state.error} 
+                  handleChange={this.handleChange} 
+                  edit={this.edit} 
+                  showInput={this.showInput}
+                  setConfirmation={this.setConfirmation}
+                  setError={this.setError} />
           </div>
         </header>
 
