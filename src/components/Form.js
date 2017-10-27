@@ -205,11 +205,11 @@ class Form extends Component {
               <label htmlFor="item1">Item 1</label>
               <input ref="item1" type="text" id="item1" placeholder="Please put item link & category" name="items" />
             </span>
-            <span className="input-box">
+            <span className="input-box multiple">
               <label htmlFor="item2">Item 1</label>
               <input ref="item2" type="text" id="item2" placeholder="Please put item link & category" name="items" />
             </span>
-            <span className="input-box">
+            <span className="input-box multiple">
               <label htmlFor="item1">Item 1</label>
               <input ref="item3" type="text" id="item3" placeholder="Please put item link & category" name="items" />
             </span>

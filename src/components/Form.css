@@ -30,6 +30,10 @@
   width: 100%;
 }
 
+.multiple {
+  margin-bottom: 10px;
+}
+
 .steps {
   align-self: flex-end;
   text-transform: capitalize;
